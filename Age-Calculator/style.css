@@ -1,0 +1,75 @@
+:root{
+    --First-color: #0d1117;
+    --Second-color: #161b22;
+    --Third-color: #21262d;
+    --Light-First-color: #89929b;
+    --Light-Second-color: #c6cdd5;
+    --Light-Third-color: #ecf2f8;
+    --Red-color: #fa7970;
+    --Orange-color: #faa356;
+    --Green-color: #7ce38b;
+    --Blue-color: #a2d2fb;
+    --Blue-second-color: #77bdfb;
+    --Purple-color: #cea5fb;
+}
+*{
+    outline : none;
+    border : none;
+    background : none;
+    margin : 0;
+    padding : 0;
+}
+body{
+    font-family : 'Poppins', sans-serif;
+    width : 100vw;
+    height : 100vh;
+    background : var(--First-color);
+    margin : 0;
+    padding: 0;
+    justify-items: center;
+    align-content: center;
+}
+main{
+    display : block;
+    position : relative;
+    background : var(--Third-color);
+    border-radius : 8px ;
+    padding : 2rem;
+    width : 35%;
+    color : var(--Blue-color);
+    box-shadow : 0px 5px 20px 2px black;
+}
+main h1{
+    margin-bottom: 20px;
+    text-align: center;
+}
+main p{
+    margin: 10px 0 ;
+        text-align: center;
+}
+
+.container input{  
+    width : 95%;
+    text-align : center;
+    color : var(--Light-Third-color);
+    background : var(--Second-color);
+    border-radius : 5px ;
+    padding : 10px ;
+    margin-bottom: 20px;
+    display : block;
+    justify-self: center;
+}::-webkit-calendar-picker-indicator{
+    background-color: var(--Blue-color);
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}#btn{
+    border-radius:10px ;
+    display: block;
+    padding: 0.7rem 2rem;
+    background-color: var(--Blue-second-color);
+    justify-self: center;
+}main h3{
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
