@@ -1,0 +1,169 @@
+:root {
+    --First-color: #0d1117;
+    --Second-color: #161b22;
+    --Third-color: #21262d;
+    --Light-First-color: #89929b;
+    --Light-Second-color: #c6cdd5;
+    --Light-Third-color: #ecf2f8;
+    --Red-color: #fa7970;
+    --Orange-color: #faa356;
+    --Green-color: #7ce38b;
+    --Blue-color: #a2d2fb;
+    --Blue-second-color: #77bdfb;
+    --Purple-color: #cea5fb;
+}
+
+* {
+    transition: all 0.4s;
+    outline: none;
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background: var(--Light-First-color);
+    margin: 0;
+    padding: 0;
+    justify-items: center;
+
+}
+
+header {
+    height: 8vh;
+    align-content: center;
+    color: var(--Light-Third-color);
+    text-align: center;
+    background: var(--Second-color);
+    width: 100%;
+}.showadd{
+    text-align: center;
+    z-index: 0;
+    position: fixed;
+    align-content: center;
+    border-radius: 10px;
+    background-color: var(--Second-color);
+    height: 5vh;
+    display: block;
+    width: 10vw;
+    justify-self: center;
+}
+.showadd:hover{
+        height: 9vh;
+    transform: translateY(0%);
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.recipe-Card {
+    padding: 1rem 2rem;
+    text-align: center;
+    width: 27vw;
+    max-height: 100vh;
+    /* min-height: fit-content; */
+    margin: 0.8rem auto;
+    background: var(--Light-Third-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.recipe-Card img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.view-recipe-btn {
+    transition: all 0.3s;
+    cursor: pointer;
+    width: 100%;
+    bottom: 0;
+    height: 40px;
+    background: var(--Third-color);
+    color: var(--Light-Third-color);
+    font-size: 1rem;
+}
+
+.view-recipe-btn:hover {
+    background: var(--Light-Second-color);
+    color: var(--Third-color);
+}
+
+.recipe-Card article {
+    text-align: initial;
+    height: 30vh;
+    margin: 0 0 2rem 0;
+    padding: 0.5rem 0 0.5rem;
+}
+
+.recipe-Card h1 {
+    align-self: center;
+
+}
+
+.Submit_btn {
+    border: 2px solid var(--Light-Third-color);
+    justify-self: center;
+    padding: 1rem 3rem;
+    transform: translateY(50%);
+    font-size: large;
+    background-color: var(--Third-color);
+    color: var(--Light-Third-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.Submit_btn:hover {
+    background-color: var(--Light-First-color);
+    color: var(--Third-color);
+}
+
+.input {
+    opacity: 0;
+    animation: 1s uppertop ease-out;
+    top: 20%;
+    padding: 0 2rem;
+    position: fixed;
+    color: var(--Light-Third-color);
+    text-align: center;
+    border: 2px solid var(--Light-Third-color);
+    justify-content: center;
+    display: grid;
+    align-items: center;
+    margin: 3rem 0;
+    border-radius: 15px;
+    width: 20%;
+    justify-self: center;
+    grid-template-areas:
+        "area"
+        "area"
+        "area"
+        "area";
+    background-color: var(--Third-color);
+}
+
+.input h1 {
+    user-select: none;
+    padding: 1rem 0.5rem;
+    justify-self: center;
+    border-radius: 5px;
+    background-color: var(--Third-color);
+    width: 70%;
+}
+
+.input input {
+    color: var(--Light-Third-color);
+    margin: 1rem 1rem;
+    border: 2px solid var(--Light-Second-color);
+    padding: 1rem 2rem;
+}
