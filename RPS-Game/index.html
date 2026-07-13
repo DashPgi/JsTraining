@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>R-P-S Game</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            Rock Paper Scissors Game
+        </h1>
+    </header>
+    <main>
+        <h2>Choose your move : </h2>
+        <div class="Card-Base">
+            <span id="Rock" class="move-Card" onclick="sumbitor(1)">&#x1F44A;</span>
+            <span id="Paper" class="move-Card" onclick="sumbitor(2)">&#x1f590;</span>
+            <span id="Scissors" class="move-Card" onclick="sumbitor(3)">&#x270c;</span>
+        </div>
+        <article>
+            <h2 id="Usr-Score">Your Score: </h2>
+            <h2 id="usrscore"></h2>
+            <h2 id="Pc-Score">Computer Score: </h2>
+            <h2 id="pcscore"></h2>
+        </article>
+    </main>
+</body>
+<script src="app.js"></script>
+
+</html>
