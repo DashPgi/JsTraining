@@ -1,0 +1,137 @@
+:root {
+    --First-color: #0d1117;
+    --Second-color: #161b22;
+    --Third-color: #21262d;
+    --Light-First-color: #89929b;
+    --Light-Second-color: #c6cdd5;
+    --Light-Third-color: #ecf2f8;
+    --Red-color: #fa7970;
+    --Orange-color: #faa356;
+    --Green-color: #7ce38b;
+    --Blue-color: #a2d2fb;
+    --Blue-second-color: #77bdfb;
+    --Purple-color: #cea5fb;
+}
+
+* {
+    transition: all 0.4s;
+    outline: none;
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 100vw;
+    min-height: 90vh;
+    background: var(--Light-Third-color);
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    padding: 1rem 0;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    color: var(--Third-color);
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+main {
+    flex: 1;
+    /* تمام فضای باقی‌مانده را پر می‌کند */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Timer {
+    font-size: 3rem;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.Time {
+    user-select: none;
+    color: var(--Third-color);
+}
+
+.Control-Panel {
+    width: 50%;
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.btn {
+    transition: all 0.2s;
+    box-shadow: 2px 2px 15px -5px black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+    margin: 0rem 2rem;
+    color: lightgray;
+    border-radius: 40px;
+    width: 30%;
+    height: 100%;
+}
+
+#startbtn {
+    color: var(--First-color);
+    background: var(--Green-color);
+}
+
+#startbtn:hover {
+    filter: brightness(120%);
+    box-shadow: 5px 5px 15px -5px black;
+
+}
+
+#startbtn:active {
+    box-shadow: 2px 4px 0px 0px var(--Light-Third-color), inset 5px 8px 15px -5px var(--Third-color);
+}
+
+#stopbtn {
+    color: var(--First-color);
+    background: var(--Red-color);
+}
+
+#stopbtn:hover {
+    filter: brightness(120%);
+    box-shadow: 5px 5px 15px -5px black;
+
+}
+
+#stopbtn:active {
+    box-shadow: 2px 4px 0px 0px var(--Light-Third-color), inset 5px 8px 15px -5px var(--Third-color);
+
+}
+
+#resetbtn {
+    color: var(--First-color);
+    background: var(--Blue-second-color)
+}
+
+#resetbtn:hover {
+    filter: brightness(120%);
+    box-shadow: 5px 5px 15px -5px black;
+
+}
+
+#resetbtn:active {
+    box-shadow: 2px 4px 0px 0px var(--Light-Third-color), inset 5px 8px 15px -5px var(--Third-color);
+
+}
