@@ -14,8 +14,7 @@
 }
 
 * {
-    transition: all 0.3s ease-in-out;
-    user-select: none;
+    transition: all 0.4s;
     outline: none;
     border: none;
     background: none;
@@ -23,112 +22,116 @@
     padding: 0;
 }
 
-.cold main {
-    color: var(--Blue-color);
-
-    .convert-button {
-        background: var(--Blue-color);
-    }
-}
-
-.hot main {
-    color: var(--Red-color);
-
-    .convert-button {
-        background: var(--Red-color);
-    }
-}
-
-.freezing main {
-    color: var(--Light-Third-color);
-
-    .convert-button {
-        background: var(--Light-Third-color);
-    }
-}
 
 body {
     font-family: 'Poppins', sans-serif;
     width: 100vw;
-    height: 100vh;
-    background: var(--First-color);
+    min-height: 90vh;
+    background: var(--Light-Third-color);
     margin: 0;
     padding: 0;
+    padding: 1rem 0;
+    display: block;
+    flex-direction: column;
+}
+
+header {
+    color: var(--Third-color);
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+main {
+    border: 5px solid var(--First-color);
+    align-content: center;
+    display: block;
+    justify-self: center;
+    width: 80vw;
+    height: 70vh;
+
+}
+
+.input {
+    width: 100%;
+    display: block;
+    height: 40%;
     justify-items: center;
     align-content: center;
 }
 
-main {
+.input input {
     display: block;
-    position: relative;
-    background: var(--Third-color);
-    border-radius: 8px;
-    padding: 2rem;
-    width: 35%;
-    color: var(--Blue-color);
-    box-shadow: 0px 5px 20px 2px black;
-}
-
-main h1 {
-    margin-bottom: 20px;
-    transition: all 0.5s;
+    width: 10%;
+    transition: all 0.4s ease-in-out;
     text-align: center;
+    margin: 0 0 8rem 0;
+    padding: 1rem 5rem;
+    border: 2px solid var(--Second-color);
 }
 
-main h1:hover,
-main p:hover {
-    text-shadow: 0px 0px 10px var(--Blue-color);
+.input input:hover {
+    border-radius: 10px;
 }
 
-main p {
-    margin: 10px 0;
+.input input:focus {
+    box-shadow: 2px 2px 15px -5px var(--First-color);
+        border-radius: 10px;
+    width: 40%;
 }
 
-.container input {
-    width: 95%;
-    text-align: center;
+#VideoLoader {
+    user-select: none;
+    transition: all 0.2s;
+    font-size: 1.5rem;
+    padding: 1rem 4rem;
+    border-radius: 10px;
     color: var(--Light-Third-color);
-    background: var(--Second-color);
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
+    background: var(--Third-color);
     display: block;
-    justify-self: center;
 }
 
-.convert-button {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding: 10px;
-    transition: all 0.3s ease-in-out;
-    border-radius: 5px;
-    background: var(--Blue-color);
-    color: var(--First-color);
-    font-weight: bold;
-    cursor: pointer;
+#VideoLoader:hover {
+    filter: brightness(150%);
+    box-shadow: 0px 2px 15px -5px var(--First-color);
 }
 
-.convert-button::before {
-    transition: all 0.4s;
-    content: "";
-    position: absolute;
-    left: 0;
-    transform: translate(-150%) skewX(-30deg);
+#VideoLoader:active {
+    box-shadow: 0px 0px 0px -0px var(--First-color), inset 7px 7px 15px -5px black;
+
+}
+
+.close{
+    font-size: 4rem;
+    border-radius: 100%;
+    left: 92%;
     top: 0;
-    width: 25%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.408);
+    position: absolute;
+    margin: 1rem 3rem;
+    display: block;
+    color: var(--Light-Third-color);
+    height: 3rem;
+    width: 3rem ;
+    cursor: pointer;
+}.close:hover{
+    scale: 1.2;
+    filter: brightness(150%);
 }
-
-.convert-button:hover::before {
-    transform: translateX(450%) skewX(-30deg);
+.videoprojector{
+    opacity: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.893);
+    width: 100vw;
+    height: 100vh;
 }
-
-.container input[type=number]::-webkit-inner-spin-button,
-.container input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0;
+.videoframe{
+    width: 70vw;
+    height: 70vh;
+    border-radius: 20px;
+    justify-self: center;
 }
