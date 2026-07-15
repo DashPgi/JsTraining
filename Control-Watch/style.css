@@ -47,7 +47,6 @@ header {
 
 main {
     flex: 1;
-    /* تمام فضای باقی‌مانده را پر می‌کند */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
