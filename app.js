@@ -1,19 +1,19 @@
-const loarderbtn = document.getElementById("VideoLoader");
-const videoframe = document.querySelector(".videoframe");
-const Videoprojector = document.querySelector(".videoprojector");
-const closebtn = document.getElementById("closebtn");
+const iframe = document.getElementById("showurlcontent");
+const openclosebtn = document.querySelector(".openclosebtn");
+const socialmedialist = document.querySelector(".Social-media-List");
+const Medias = document.querySelectorAll(".Media");
 
-loarderbtn.addEventListener("click", () => {
-  Videoprojector.style.display = "flex";
-  Videoprojector.style.opacity = 1;
-
-  const ulrinput = document.getElementById("urlinput").value;
-  
-  videoframe.src = ulrinput;
-  videoframe.load();
+openclosebtn.addEventListener("click", () => {
+  socialmedialist.classList.toggle("active");
 });
-
-closebtn.addEventListener("click", () => {
-  Videoprojector.style.display = "none";
-  Videoprojector.style.opacity = 0;
+Medias.forEach((e) => {
+  e.addEventListener("click", () => {
+    iframe.src = e.getAttribute("value");
+    const notification = document.getElementById("notif");
+    notification.textContent = "If this frame doesn't show any content, double-click to open it."
+  });
+  e.addEventListener("dblclick", () => {
+    const url = e.getAttribute("value");
+    window.open(url, "_blank");
+  });
 });
