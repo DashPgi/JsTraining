@@ -1,0 +1,122 @@
+:root {
+    --First-color: #0d1117;
+    --Second-color: #161b22;
+    --Third-color: #21262d;
+    --Light-First-color: #89929b;
+    --Light-Second-color: #c6cdd5;
+    --Light-Third-color: #ecf2f8;
+    --Red-color: #fa7970;
+    --Orange-color: #faa356;
+    --Green-color: #7ce38b;
+    --Blue-color: #a2d2fb;
+    --Blue-second-color: #77bdfb;
+    --Purple-color: #cea5fb;
+}
+
+* {
+    transition: all 0.4s;
+    outline: none;
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100vw;
+    min-height: 90vh;
+    background: var(--Light-Third-color);
+    margin: 0;
+    padding: 0;
+    display: block;
+
+}
+
+main {
+    text-align: center;
+    color: var(--Light-Third-color);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    display: flex;
+    width: 100vw;
+    height: 50vh;
+}
+
+.btnbase {
+    box-shadow: inset 0px 0px 10px 0px black;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 30%;
+    width: 15%;
+    border-radius: 100px;
+    background: var(--Light-First-color);
+    /* overflow: hidden; */
+}
+
+#togglebtn {
+    position: absolute;
+    border-radius: 100px;
+    height: 90px;
+
+    width: 90px;
+    background: var(--Red-color);
+}
+
+#togglebtn.Sun {
+    box-shadow: 0px 0px 30px 10px var(--Orange-color);
+    background: var(--Orange-color);
+}
+
+#togglebtn.Moon {
+    box-shadow: 0px 0px 30px 0px var(--Blue-color);
+    background: var(--Blue-color);
+}
+
+#togglebtn.animation {
+    animation: anime 0.5s ease-in-out;
+}
+
+@keyframes anime {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.3;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+/* #headtext{
+} */
+.messagebox {
+    align-content: center;
+    padding: 1rem 0;
+    width: 80vw;
+    margin: 3rem 0 0 0;
+    justify-self: center;
+    height: 30vh;
+    border-radius: 20px;
+}
+
+.messagebox.Moon {
+    border: 2px solid var(--Blue-color);
+    color: var(--Blue-color);
+    box-shadow: 0px 0px 30px 0px var(--Blue-color);
+}
+
+.messagebox.Sun {
+    border: 2px solid var(--Orange-color);
+    color: var(--Orange-color);
+    box-shadow: 0px 0px 30px 10px var(--Orange-color);
+
+}
