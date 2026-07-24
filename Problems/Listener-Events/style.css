@@ -1,0 +1,85 @@
+:root {
+    --First-color: #0d1117;
+    --Second-color: #161b22;
+    --Third-color: #21262d;
+    --Light-First-color: #89929b;
+    --Light-Second-color: #c6cdd5;
+    --Light-Third-color: #ecf2f8;
+    --Red-color: #fa7970;
+    --Orange-color: #faa356;
+    --Green-color: #7ce38b;
+    --Blue-color: #a2d2fb;
+    --Blue-second-color: #77bdfb;
+    --Purple-color: #cea5fb;
+}
+
+* {
+    transition: all 0.4s;
+    outline: none;
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100vw;
+    min-height: 90vh;
+    background: var(--First-color);
+    margin: 0;
+    display: block;
+    align-content: center;
+    justify-items: center;
+}
+
+main {
+    user-select: none;
+    text-align: center;
+    color: var(--Light-Third-color);
+    justify-items: center;
+    align-content: center;
+    display: block;
+    width: 100vw;
+    height: 80vh;
+}
+
+.mousevent {
+    justify-items: center;
+    border: 2px solid var(--Light-Second-color);
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 0;
+    width: 90%;
+    height: 50%;
+}
+
+.kyeevent {
+    justify-items: center;
+    border: 2px solid var(--Light-Second-color);
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    width: 90%;
+    height: 40%;
+}
+
+.btn {
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+    align-self: center;
+    justify-self: center;
+    background: var(--Blue-color);
+    height: 50%;
+    width: 50%;
+}
+
+.btn:hover {
+    color: var(--First-color);
+    border-radius: 10px;
+}
