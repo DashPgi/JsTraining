@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <div id="loadingpage">Loading...</div>
     <main>
         <h1>Mouse Events</h1>
         <div class="mousevent">
@@ -20,16 +21,61 @@
             <button class="btn" id="mousemovebtn">Mousemove</button>
             <button class="btn" id="mouseenterbtn">Mouseenter</button>
             <button class="btn" id="mouseleavebtn">Mouseleave</button>
-            <button class="btn" id="mouseoverbtn">Mouseover<span style="width: 20px;height: 20px;background: var(--Blue-color);display: block;position: absolute;transform: translate(-150%,-100%);"></span></button>
-            <button class="btn" id="mouseoutbtn">Mouseout<span style="width: 20px;height: 20px;background: var(--Blue-color);display: block;position: absolute;transform: translate(-150%,-100%);"></span></button>
-            <button class="btn" id="contextmenubtn">Righlick<span class="rightclickchild" style="width: 20px;height: 20px;background: var(--Blue-color);display: none;position: absolute;transform: translate(-150%,-100%);"></span></button>
+            <button class="btn" id="mouseoverbtn">Mouseover<span
+                    style="width: 20px;height: 20px;background: var(--Blue-color);display: block;position: absolute;transform: translate(-150%,-100%);"></span></button>
+            <button class="btn" id="mouseoutbtn">Mouseout<span
+                    style="width: 20px;height: 20px;background: var(--Blue-color);display: block;position: absolute;transform: translate(-150%,-100%);"></span></button>
+            <button class="btn" id="contextmenubtn">Righlick<span class="rightclickchild"
+                    style="width: 20px;height: 20px;background: var(--Blue-color);display: none;position: absolute;transform: translate(-150%,-100%);"></span></button>
         </div>
         <h1>Keyboard Events</h1>
         <div class="kyeevent">
             <button class="btn" id="keydownbtn">keydown</button>
             <button class="btn" id="keyupbtn">keyup</button>
         </div>
-    </main> 
+        <h1>Form Events</h1>
+        <div class="formevent">
+            <form action="" class="myform">
+                <div class="inputs">
+                    <div>
+                        <h1 id="h1-online">Online Text</h1>
+                        <input id="onlineinput" type="text" class="inpts">
+                    </div>
+                    <div>
+                        <h1 id="h1-change">Change Text</h1>
+                        <input id="changeinput" type="text" class="inpts">
+                    </div>
+                    <div>
+                        <h1 id="h1-focus">Focus Text</h1>
+                        <input id="focusinput" type="text" class="inpts">
+                    </div>
+                    <div>
+                        <h1 id="h1-Blur">Blur Text</h1>
+                        <input id="blurinput" type="text" class="inpts">
+                    </div>
+                </div>
+                <div class="controlbase">
+                    <button type="reset" id="resetbtn">Reset</button>
+                    <button type="submit" id="submitbtn">Submit</button>
+                </div>
+            </form>
+        </div>
+        <h1>Windows Events</h1>
+        <div class="windowsevent">
+            <code class="wtext">For Event (Load) = ctr + R</code>
+            <code class="wtext">For Event (DOMcontentLoad) = when the web loaded then inputs are loading</code>
+            <code class="wtext">For Event (Scroll) = First Reload your web Then see your Rightside</code>
+            <code class="wtext">For Event (Resize) = Change your web Resolution</code>
+            <code class="wtext">For Event (beforeunload) = Close your web Resolution and see cl</code>
+            <code class="wtext">For Event (unload) = i Cant Show you in frontend :/</code>
+            <div class="mouseparent">
+                <span class="mouse">
+                    <span class="scroller">
+                    </span>
+                </span>
+            </div>
+        </div>
+    </main>
 </body>
 <script src="app.js"></script>
 
