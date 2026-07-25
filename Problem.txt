@@ -3,14 +3,13 @@ Listener Event's => {
     Keyboard Events +
     Form Events+ + 
     Window Events +
-    Drag & Drop Events
-    Touch Events
-    Pointer Events
-    Clipboard Events
-    Media Events
-} =>>>
+    Drag & Drop Events +
+    Touch Events +
+    Pointer Events +
+    Clipboard Events + 
+    Media Events +
+} =>>> {Done :)}
+-------------------------------
 pseudo-element -webkit-
 Function haye DOM
 Manipulate haye Elements
-Windows Event 
-Client Event
