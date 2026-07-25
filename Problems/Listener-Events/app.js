@@ -152,9 +152,9 @@ mouse.style.width = "30px";
 mouse.style.height = "40px";
 mouse.style.border = "2px solid var(--Light-Third-color)";
 mouse.style.borderRadius = "50px";
-mouse.style.padding = "0.5rem 0"
+mouse.style.padding = "0.5rem 0";
 const scroller = document.querySelector(".scroller");
-scroller.style.opacity = "0"
+scroller.style.opacity = "0";
 scroller.style.border = "2px solid var(--Light-Third-color)";
 scroller.style.borderRadius = "50px";
 
@@ -165,10 +165,159 @@ window.addEventListener("scroll", () => {
   scroller.style.visibility = "visible";
 });
 
-window.addEventListener("resize",()=>{
-  console.log("You're Resizing This Page")
-})
+window.addEventListener("resize", () => {
+  console.log("You're Resizing This Page");
+});
 
-window.addEventListener("beforeunload",()=>{
+window.addEventListener("beforeunload", () => {
   console.log("Berood!");
 });
+
+const dragel = document.getElementById("dragel");
+const dragel2 = document.getElementById("dragel2");
+
+dragel.addEventListener("dragstart", () => {
+  dragel.style.background = "var(--Green-color)";
+});
+
+dragel2.addEventListener("drag", () => {
+  dragel2.style.background = "var(--Blue-color)";
+});
+
+dragel.addEventListener("dragend", () => {
+  dragel.style.background = "var(--Purple-color)";
+});
+
+const Enterarea = document.getElementById("Enterarea");
+
+Enterarea.addEventListener("dragenter", () => {
+  Enterarea.style.border = "5px solid var(--Green-color)";
+});
+
+const Overarea = document.getElementById("Overarea");
+
+Overarea.addEventListener("dragover", () => {
+  Overarea.style.border = "5px solid var(--Blue-color)";
+});
+
+const leavearea = document.getElementById("leavearea");
+
+leavearea.addEventListener("dragleave", () => {
+  leavearea.style.border = "5px solid var(--Red-color)";
+});
+
+const touchstart = document.getElementById("touchstart");
+
+touchstart.addEventListener("touchstart", () => {
+  touchstart.style.background = "var(--Green-color)";
+});
+
+const touchmove = document.getElementById("touchmove");
+
+touchmove.addEventListener("touchmove", () => {
+  touchmove.style.background = "var(--Green-color)";
+});
+
+const touchend = document.getElementById("touchend");
+
+touchend.addEventListener("touchend", () => {
+  touchend.style.background = "var(--Green-color)";
+});
+
+const touchcancel = document.getElementById("touchcancel");
+
+touchcancel.addEventListener("touchcancel", () => {
+  touchcancel.style.background = "var(--Green-color)";
+});
+
+const pointerdown = document.getElementById("pointerdown");
+
+pointerdown.addEventListener("pointerdown", () => {
+  pointerdown.style.background = "var(--Purple-color)";
+});
+
+const pointerup = document.getElementById("pointerup");
+
+pointerup.addEventListener("pointerup", () => {
+  pointerup.style.background = "var(--Purple-color)";
+});
+
+const pointermove = document.getElementById("pointermove");
+
+pointermove.addEventListener("pointermove", () => {
+  pointermove.style.background = "var(--Purple-color)";
+});
+
+const pointerenter = document.getElementById("pointerenter");
+
+pointerenter.addEventListener("pointerenter", () => {
+  pointerenter.style.background = "var(--Purple-color)";
+});
+
+const pointerleave = document.getElementById("pointerleave");
+
+pointerleave.addEventListener("pointerleave", () => {
+  pointerleave.style.background = "var(--Purple-color)";
+});
+
+const pointercancel = document.getElementById("pointercancel");
+
+pointercancel.addEventListener("pointercancel", () => {
+  pointercancel.style.background = "var(--Purple-color)";
+});
+
+const clipboard = document.getElementById("clipboard");
+const log = document.querySelector(".log");
+
+clipboard.addEventListener("copy", () => {
+  log.textContent = "Copied!";
+});
+
+clipboard.addEventListener("paste", () => {
+  log.textContent = "Pasted";
+});
+
+clipboard.addEventListener("cut", () => {
+  log.textContent = "Cuted";
+});
+
+const video = document.querySelector("#video");
+const icon = document.querySelector("#event-icon");
+
+function showEventIcon(type) {
+  const icons = {
+    play: "▶️",
+    pause: "⏸️",
+    ended: "🏁",
+    volumechange: "🔊",
+    timeupdate: "⏩",
+  };
+
+  icon.innerHTML = icons[type] || "🎬";
+
+  icon.classList.remove("show");
+
+  void icon.offsetWidth;
+
+  icon.classList.add("show");
+}
+
+video.addEventListener("play", () => {
+  showEventIcon("play");
+});
+
+video.addEventListener("pause", () => {
+  showEventIcon("pause");
+});
+
+video.addEventListener("ended", () => {
+  showEventIcon("ended");
+});
+
+video.addEventListener("volumechange", () => {
+  showEventIcon("volumechange");
+});
+
+// video.addEventListener("timeupdate", () => {
+//   showEventIcon("timeupdate");
+// });

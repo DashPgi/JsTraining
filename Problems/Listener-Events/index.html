@@ -75,6 +75,49 @@
                 </span>
             </div>
         </div>
+        <h1>Drag & Drop Events</h1>
+        <div class="ddevent">
+            <div class="el">
+                <div draggable="true" class="element" id="dragel">Drag start and end</div>
+                <div draggable="true" class="element" id="dragel2">Drag</div>
+            </div>
+            <div class="ara">
+                <div draggable="true" class="area" id="Enterarea">Enterarea</div>
+                <div draggable="true" class="area" id="Overarea">Overarea</div>
+                <div draggable="true" class="area" id="leavearea">leavearea</div>
+            </div>
+        </div>
+        <h1>Touch Events</h1>
+        <code style="justify-self: center;">Need a Phone To check it</code>
+        <div class="toucevent">
+            <div class="btn" id="touchstart">touchstart</div>
+            <div class="btn" id="touchmove">touchmove</div>
+            <div class="btn" id="touchend">touchend</div>
+            <div class="btn" id="touchcancel">touchcancel</div>
+        </div>
+        <h1>Pointer Events</h1>
+        <code style="justify-self: center;">Need a Mouse To check it</code>
+        <div class="pointerevent">
+            <div class="btn" id="pointerdown">pointerdown</div>
+            <div class="btn" id="pointerup">pointerup</div>
+            <div class="btn" id="pointermove">pointermove</div>
+            <div class="btn" id="pointerenter">pointerenter</div>
+            <div class="btn" id="pointerleave">pointerleave</div>
+            <div class="btn" id="pointercancel">pointercancel</div>
+        </div>
+        <h1>Clipboard Events</h1>
+        <div class="clipboardevent">
+            <code style="justify-self: center; text-align: center;">Copy Text ,Cut Text,Pase Text</code>
+            <h1 class="log">Do it!</h1>
+            <input type="text" id="clipboard">
+        </div>
+        <h1>Media Events</h1>
+        <div class="mediaevent">
+            <video id="video" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            </video>
+            <div id="event-icon"></div>
+        </div>
     </main>
 </body>
 <script src="app.js"></script>
