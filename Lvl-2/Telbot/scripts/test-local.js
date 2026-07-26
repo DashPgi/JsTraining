@@ -15,8 +15,10 @@ async function main() {
 
   console.log("✅ پیام و استیکر با موفقیت ارسال شد.");
 }
-
 main().catch((err) => {
   console.error("❌ خطا:", err.message);
+  if (err.cause) {
+    console.error("جزئیات فنی خطا (cause):", err.cause);
+  }
   process.exit(1);
 });

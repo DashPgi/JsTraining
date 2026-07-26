@@ -1,4 +1,4 @@
-const TELEGRAM_API = "8146929899:AAFkgSCUPxvpXQHVJj6cUSKtdIZs9vRieco";
+const TELEGRAM_API = "https://api.telegram.org";
 
 function getBotToken() {
   const token = process.env.BOT_TOKEN;
