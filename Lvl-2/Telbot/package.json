@@ -1,0 +1,19 @@
+{
+  "name": "telegram-daily-sticker-bot",
+  "version": "1.0.0",
+  "description": "ربات تلگرامی که هر روز یک پیام آپدیت + یک استیکر ثابت با تاریخ روز روی آن ارسال می‌کند. طراحی‌شده برای اجرا روی پلتفرم‌های سرورلس (Vercel).",
+  "type": "module",
+  "main": "api/daily.js",
+  "scripts": {
+    "test:local": "node scripts/test-local.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.4"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}
