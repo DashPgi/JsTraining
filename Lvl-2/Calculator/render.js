@@ -1,139 +1,156 @@
-const screen = document.getElementById("input-screen");
-const buttons = document.querySelectorAll(".btn");
+// btns.forEach((e) => {
+//   if (["+", "-", "*", "/", "="].includes(e.innerHTML)) {
+//     e.style.background = "var(--Light-First-color)";
+//   }
+//   if (["C"].includes(e.innerHTML)) {
+//     e.style.background = "var(--Red-color)";
+//   }
+//   if (["="].includes(e.innerHTML)) {
+//     e.style.background = "var(--Green-color)";
+//   }
+// });
+const input = document.getElementById("input-screen");
 
-let expression = "";
+function Calc(val) {
+  const operators = ["+", "-", "*", "/"];
 
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const value = button.textContent.trim();
+  // محدودیت طول
+  if (
+    input.value.length >= 20 &&
+    !["=", "clear", "backspace", "sqrt", "square", "inverse", "neg"].includes(
+      val,
+    )
+  ) {
+    return;
+  }
 
-    // پاک کردن کامل
-    if (value === "C" || value === "CE") {
-      expression = "";
-      screen.value = "0";
-      return;
-    }
+  switch (val) {
+    // اعداد
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+      input.value += val;
+      break;
 
-    // حذف یک کاراکتر
-    if (value === "⌫" || value === "<=") {
-      expression = expression.slice(0, -1);
-      screen.value = expression || "0";
-      return;
-    }
+    // اعشار
+    case ".":
+      let parts = input.value.split(/[\+\-\*\/]/);
+      let last = parts[parts.length - 1];
 
-    // درصد
-    if (value === "%") {
-      if (expression) {
-        expression = (Number(expression) / 100).toString();
-        screen.value = expression;
+      if (!last.includes(".")) {
+        if (last === "") {
+          input.value += "0.";
+        } else {
+          input.value += ".";
+        }
       }
-      return;
-    }
+      break;
 
-    // معکوس عدد
-    if (value === "1/x") {
-      if (expression) {
-        expression = (1 / Number(expression)).toString();
-        screen.value = expression;
-      }
-      return;
-    }
+    // عملگرها
+    case "+":
+    case "-":
+    case "*":
+    case "/":
+      if (input.value === "") return;
 
-    // توان دو
-    if (value === "x^2") {
-      if (expression) {
-        expression = (Number(expression) ** 2).toString();
-        screen.value = expression;
+      if (operators.includes(input.value.slice(-1))) {
+        input.value = input.value.slice(0, -1) + val;
+      } else {
+        input.value += val;
       }
-      return;
-    }
+
+      break;
+
+    // محاسبه
+    case "=":
+      if (input.value === "" || operators.includes(input.value.slice(-1)))
+        return;
+
+      try {
+        let result = eval(input.value);
+
+        if (!isFinite(result)) {
+          input.value = "Error";
+        } else {
+          input.value = result;
+        }
+      } catch {
+        input.value = "Error";
+      }
+
+      break;
+
+    // پاک کردن
+    case "clear":
+      input.value = "";
+      break;
+
+    // حذف آخرین کاراکتر
+    case "backspace":
+      input.value = input.value.slice(0, -1);
+      break;
+
+    // مربع
+    case "square":
+      if (input.value === "") return;
+
+      input.value = Math.pow(Number(input.value), 2);
+
+      break;
 
     // ریشه دوم
-    if (value === "xroot2") {
-      if (expression) {
-        expression = Math.sqrt(Number(expression)).toString();
-        screen.value = expression;
-      }
-      return;
-    }
+    case "sqrt":
+      if (input.value === "") return;
 
-    // تغییر علامت
-    if (value === "+/-") {
-      if (expression) {
-        expression = (-Number(expression)).toString();
-        screen.value = expression;
-      }
-      return;
-    }
-
-    if (value === "=") {
-      console.log("Expression:", expression);
-      try {
-        let result = eval(
-          expression
-            .replaceAll("×", "*")
-            .replaceAll("÷", "/")
-        );
-
-        expression = result.toString();
-        screen.value = expression;
-
-      } catch (error) {
-        console.log(error);
-        screen.value = "Error";
-        expression = "";
+      if (Number(input.value) < 0) {
+        input.value = "Error";
+        return;
       }
 
-      return;
-    }
+      input.value = Math.sqrt(Number(input.value));
 
+      break;
 
-    // جلوگیری از چند عملگر پشت سر هم
-    const operators = ["+", "-", "×", "÷"];
+    // معکوس
+    case "inverse":
+      if (input.value === "") return;
 
-    if (
-      operators.includes(value) &&
-      operators.includes(expression.slice(-1))
-    ) {
-      expression = expression.slice(0, -1);
-    }
+      if (Number(input.value) === 0) {
+        input.value = "Error";
+        return;
+      }
 
+      input.value = 1 / Number(input.value);
 
-    // اضافه کردن دکمه
-    expression += value;
-    screen.value = expression;
+      break;
+
+    // مثبت و منفی
+    case "neg":
+      if (input.value === "") return;
+
+      input.value = Number(input.value) * -1;
+
+      break;
+
+    // درصد
+    case "%":
+      if (input.value === "") return;
+
+      input.value = Number(input.value) / 100;
+
+      break;
+  }
+}
+
+document.querySelectorAll(".btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    Calc(btn.dataset.value);
   });
-});
-
-
-// پشتیبانی از کیبورد
-document.addEventListener("keydown", (e) => {
-
-  const key = e.key;
-
-  if (!isNaN(key) || key === ".") {
-    expression += key;
-  }
-
-  if (["+", "-", "*", "/"].includes(key)) {
-    expression += key;
-  }
-
-  if (key === "Enter") {
-    try {
-      expression = eval(expression).toString();
-    } catch {
-      expression = "Error";
-    }
-  }
-
-  if (key === "Backspace") {
-    expression = expression.slice(0, -1);
-  }
-
-  if (key === "Escape") {
-    expression = "";
-  }
-
-  screen.value = expression || "0";
 });
