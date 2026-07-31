@@ -1,21 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <title>Hello from Electron renderer!</title>
-  </head>
-  <body>
-    <h1>Hello from Electron renderer!</h1>
-    <p>👋</p>
-    <p id="info"></p>
-  </body>
-  <script src="./renderer.js"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <title>My Calculator!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- <div class="title-bar">
+    <button id="minimize">−</button>
+    <button id="close">×</button>
+  </div> -->
+  <main>
+    <h1 id="input-screen">s</h1>
+    <div class="extra-buttons">
+      <button class="exbtn" id="">MC</button>
+      <button class="exbtn" id="">MR</button>
+      <button class="exbtn" id="">M+</button>
+      <button class="exbtn" id="">M-</button>
+      <button class="exbtn" id="">Ms</button>
+      <button class="exbtn" id="">M,</button>
+    </div>
+    <div class="control-buttons">
+      <button class="btn" id="">%</button>
+      <button class="btn" id="">CE</button>
+      <button class="btn" id="">C</button>
+      <button class="btn" id="">
+        <=< /button>
+          <button class="btn" id="">1/x</button>
+          <button class="btn" id="">x^2</button>
+          <button class="btn" id="">xroot2</button>
+          <button class="btn" id="">/</button>
+          <button class="btn" id="">7</button>
+          <button class="btn" id="">8</button>
+          <button class="btn" id="">9</button>
+          <button class="btn" id="">*</button>
+          <button class="btn" id="">4</button>
+          <button class="btn" id="">5</button>
+          <button class="btn" id="">6</button>
+          <button class="btn" id="">-</button>
+          <button class="btn" id="">1</button>
+          <button class="btn" id="">2</button>
+          <button class="btn" id="">3</button>
+          <button class="btn" id="">+</button>
+          <button class="btn" id="">+/-</button>
+          <button class="btn" id="">0</button>
+          <button class="btn" id="">.</button>
+          <button class="btn" id="">=</button>
+    </div>
+  </main>
+</body>
+<script src="./renderer.js"></script>
+<script src="render.js"></script>
+
 </html>
