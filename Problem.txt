@@ -13,3 +13,4 @@ Listener Event's => {
 pseudo-element -webkit-
 Function haye DOM
 Manipulate haye Elements
+JsMethod's
