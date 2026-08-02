@@ -50,7 +50,7 @@ function buildDateSvg(dateText) {
 export async function composeDailySticker() {
   const basePath =
     process.env.STICKER_BASE_PATH ||
-    path.join(process.cwd(), "assets", "sticker-base.png");
+    path.join(process.cwd(), "assets", "sticker.png");
 
   let baseBuffer;
   try {

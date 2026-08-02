@@ -1,20 +1,8 @@
-// btns.forEach((e) => {
-//   if (["+", "-", "*", "/", "="].includes(e.innerHTML)) {
-//     e.style.background = "var(--Light-First-color)";
-//   }
-//   if (["C"].includes(e.innerHTML)) {
-//     e.style.background = "var(--Red-color)";
-//   }
-//   if (["="].includes(e.innerHTML)) {
-//     e.style.background = "var(--Green-color)";
-//   }
-// });
 const input = document.getElementById("input-screen");
 
 function Calc(val) {
   const operators = ["+", "-", "*", "/"];
 
-  // محدودیت طول
   if (
     input.value.length >= 20 &&
     !["=", "clear", "backspace", "sqrt", "square", "inverse", "neg"].includes(
@@ -25,7 +13,6 @@ function Calc(val) {
   }
 
   switch (val) {
-    // اعداد
     case 0:
     case 1:
     case 2:
@@ -39,7 +26,6 @@ function Calc(val) {
       input.value += val;
       break;
 
-    // اعشار
     case ".":
       let parts = input.value.split(/[\+\-\*\/]/);
       let last = parts[parts.length - 1];
@@ -53,7 +39,6 @@ function Calc(val) {
       }
       break;
 
-    // عملگرها
     case "+":
     case "-":
     case "*":
@@ -68,7 +53,6 @@ function Calc(val) {
 
       break;
 
-    // محاسبه
     case "=":
       if (input.value === "" || operators.includes(input.value.slice(-1)))
         return;
@@ -87,17 +71,14 @@ function Calc(val) {
 
       break;
 
-    // پاک کردن
     case "clear":
       input.value = "";
       break;
 
-    // حذف آخرین کاراکتر
     case "backspace":
       input.value = input.value.slice(0, -1);
       break;
 
-    // مربع
     case "square":
       if (input.value === "") return;
 
@@ -105,7 +86,6 @@ function Calc(val) {
 
       break;
 
-    // ریشه دوم
     case "sqrt":
       if (input.value === "") return;
 
@@ -118,7 +98,6 @@ function Calc(val) {
 
       break;
 
-    // معکوس
     case "inverse":
       if (input.value === "") return;
 
@@ -131,7 +110,6 @@ function Calc(val) {
 
       break;
 
-    // مثبت و منفی
     case "neg":
       if (input.value === "") return;
 
@@ -139,7 +117,6 @@ function Calc(val) {
 
       break;
 
-    // درصد
     case "%":
       if (input.value === "") return;
 

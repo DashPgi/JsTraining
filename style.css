@@ -28,7 +28,7 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     width: 100vw;
     min-height: 90vh;
-    background: var(--First-color);
+    background: var(--Third-color);
     margin: 0;
     display: block;
     align-content: center;
